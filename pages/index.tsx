@@ -13,7 +13,7 @@ const Home: NextPage = () => {
     <div>
       <Head>
         <title>Future of Payments is Now!</title>
-        <meta name="description" content="BTCPa POC" />
+        <meta name="description" content="BTCPay POC" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
