@@ -1,12 +1,12 @@
 import axios from 'axios';
 
 const axiosClient = axios.create({
-    baseURL: "BTCPAY_URL",
+    baseURL: process.env.BTCPAY_URL,
     timeout: 5000,
     responseType: 'json',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization':" BTCPAY_AUTH"
+      'Authorization': `Basic ${process.env.BTCPAY_AUTH}`
     }
 });
 
