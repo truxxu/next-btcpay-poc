@@ -23,6 +23,7 @@ const createInvoice = async () => {
     try {
         const response = await axiosClient.post("/invoices", invoiceData);
         const invoiceId = response.data.data.id;
+        // window.btcpay.showInvoice(invoiceId);
     } catch (error) {
         window.alert('Something happened, try again later')
     }
