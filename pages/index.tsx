@@ -4,10 +4,13 @@ import Image from 'next/image'
 
 import styles from '../styles/Home.module.scss'
 import head from '../public/images/head.jpg'
+import Marquee from '../components/Marquee'
+
+const marqueeText = " Escape financial institutions - secure - private - decentralized - censorship-resistant - no gods, no countries, no masters"
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Future of Payments is Now!</title>
         <meta name="description" content="BTCPa POC" />
@@ -23,13 +26,10 @@ const Home: NextPage = () => {
           placeholder="blur"
         />
         <h1 className={styles.title}>
-          Escape financial institutions
+          Crypto Payments
         </h1>
+        <Marquee text={marqueeText}/>
       </main>
-
-      <footer className={styles.footer}>
-        <p>Footer goes here</p>
-      </footer>
     </div>
   )
 }
