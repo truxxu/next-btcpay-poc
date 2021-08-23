@@ -1,0 +1,19 @@
+.container {
+    height: 100vh;
+    background: #FF512F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #0CECDD, #C400FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #0CECDD, #C400FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-family: "VCROSD";
+    color: white;
+    text-transform: uppercase;
+}

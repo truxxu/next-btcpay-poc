@@ -1,7 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+
 import styles from '../styles/Home.module.scss'
+import head from '../public/images/head.jpg'
 
 const Home: NextPage = () => {
   return (
@@ -13,8 +15,15 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <Image
+          src={head}
+          alt="retro head picture"
+          width={300}
+          height={300}
+          placeholder="blur"
+        />
         <h1 className={styles.title}>
-          Escape
+          Escape financial institutions
         </h1>
       </main>
 
