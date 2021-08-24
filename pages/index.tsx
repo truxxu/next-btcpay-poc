@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -6,6 +7,7 @@ import Script from 'next/script'
 import styles from '../styles/Home.module.scss'
 import head from '../public/images/head.jpg'
 import Marquee from '../components/Marquee'
+import Price from '../components/Price'
 
 const marqueeText = " Escape financial institutions - secure - private - decentralized - censorship-resistant - no gods, no countries, no masters"
 
@@ -30,9 +32,10 @@ const Home: NextPage = () => {
           Crypto Payments
         </h1>
         <Marquee text={marqueeText}/>
-        <div className={styles.button} onClick={()=> console.log("click!")}>
+        <Price sats={100} rate={1}/>
+        {/* <div className={styles.button} onClick={createInvoice}>
           PAY NOW 
-        </div>
+        </div> */}
       </main>
       <Script src="https://btcpay.machete.com.co/modal/btcpay.js" />
     </div>
