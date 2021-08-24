@@ -9,21 +9,23 @@ const axiosClient = axios.create({
     }
 });
 
-const useBitPay = () => {
-    const [rate, setRate] = useState();
-    const [isLoading, setIsLoading] = useState(true);
+// Can only use custom hooks within React components
 
-    const getRate = async () => {
-        try {
-            const response = await axiosClient.get('/rates/BTC/USD');
-            setIsLoading(false);
-            setRate(response.data.rate)
-        } catch (error) {
-            window.alert('Error, try again later')
-        }
-    }
+// const useBitPay = () => {
+//     const [rate, setRate] = useState(100);
+//     const [isLoading, setIsLoading] = useState(true);
 
-    return [useBitPay, rate, isLoading]
-}
+//     const getRate = async () => {
+//         try {
+//             const response = await axiosClient.get('/rates/BTC/USD');
+//             setIsLoading(false);
+//             setRate(response.data.rate)
+//         } catch (error) {
+//             window.alert('Error, try again later')
+//         }
+//     }
 
-export default useBitPay
+//     return [getRate, rate, isLoading]
+// }
+
+export default axiosClient
