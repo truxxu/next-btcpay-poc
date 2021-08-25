@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import axios from 'axios';
 import type { NextPage } from 'next'
 import { GetServerSideProps } from 'next'
@@ -19,6 +20,13 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({rate, invoiceId}) => {
+
+  const [sats, setSats] = useState(100)
+
+  const handleClick = () => {
+    window.btcpay.showInvoice(invoiceId)
+  }
+
   return (
     <div>
       <Head>
@@ -39,8 +47,11 @@ const Home: NextPage<Props> = ({rate, invoiceId}) => {
           Crypto Payments
         </h1>
         <Marquee text={marqueeText}/>
-        <Price sats={100} rate={rate}/>
-        <div className={styles.button} onClick={() => window.btcpay.showInvoice(invoiceId)}>
+        <Price sats={sats} rate={rate}/>
+        <div className={styles.button} onClick={() => setSats(sats + 100)}>
+          + 
+        </div>
+        <div className={styles.button} onClick={handleClick}>
           PAY NOW 
         </div>
       </main>
@@ -69,11 +80,11 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     }
   });
 
-  const response = await bitPayRequest.get('/rates/BTC/COP');
-  const rate = response.data.data.rate
+  const bitPayResponse = await bitPayRequest.get('/rates/BTC/COP');
+  const rate = bitPayResponse.data.data.rate
 
-  const response2 = await axiosClient.post("/invoices", invoiceData);
-  const invoiceId = response2.data.data.id;
+  const btcPayResponse = await axiosClient.post("/invoices", invoiceData);
+  const invoiceId = btcPayResponse.data.data.id;
 
   return { props: { rate, invoiceId } }
 }
