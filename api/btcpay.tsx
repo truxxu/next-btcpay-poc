@@ -13,7 +13,7 @@ const axiosClient = axios.create({
 const invoiceData = {
     "price": 10000,
     "currency": "COP",
-    "orderId": "something",
+    "orderId": "420",
     "itemDesc": "item description",
     "notificationUrl": "https://webhook.after.checkout.com/goeshere",
     "redirectURL": "https://go.here.after.checkout.com"
