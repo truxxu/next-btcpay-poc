@@ -11,7 +11,7 @@ import axiosClient from '../api/bitpay'
 import Marquee from '../components/Marquee'
 import Price from '../components/Price'
 
-const marqueeText = " Escape financial institutions - secure - private - decentralized - censorship-resistant - no gods, no countries, no masters"
+const marqueeText = "no gods, no countries, no masters"
 
 interface Props {
   rate?: number; 
@@ -39,9 +39,9 @@ const Home: NextPage<Props> = ({rate}) => {
         </h1>
         <Marquee text={marqueeText}/>
         <Price sats={100} rate={rate}/>
-        {/* <div className={styles.button} onClick={createInvoice}>
+        <div className={styles.button}>
           PAY NOW 
-        </div> */}
+        </div>
       </main>
       <Script src="https://btcpay.machete.com.co/modal/btcpay.js" />
     </div>
