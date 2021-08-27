@@ -24,7 +24,7 @@ const Home: NextPage<Props> = ({rate, invoiceId}) => {
   const [sats, setSats] = useState(100)
 
   const handleClick = () => {
-    window.btcpay.showInvoice(invoiceId)
+    // window.btcpay.showInvoice(invoiceId)
   }
 
   return (
